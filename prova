@@ -1,0 +1,101 @@
+alunos = []
+notas = []
+
+for i in range(5):
+    aluno = input(print('Insira o nome do aLuno'))
+    alunos.append(aluno)
+
+for a in alunos:
+    nota = int(input(print(f'Insira a nota do aluno(a) {a}')))
+    notas.append(nota)
+
+for l in range(5):
+    if notas[l] >= 7:
+        print(alunos[l], "foi aprovado(a) com nota", notas[l])
+    elif 6.9 > notas[l] >= 4:
+        print(alunos[l], "está em recuperação com nota", notas[l])
+    elif notas[l] < 4:
+        print(alunos[l], "foi reprovado(a) com nota", notas[l])
+
+
+
+2)
+valores = []
+valor = []
+par = []
+impar = []
+
+
+def pares(valores):
+    for i in range(10):
+        if valores[i] % 2 == 0:
+            par.append([i])
+    return par
+
+
+def impares(valores):
+    for i in range(10):
+        if valores[i] % 2 != 0:
+            impar.append([i])
+    return impar
+
+
+for i in range(10):
+    valor = int(input("Insira 10 valores inteiros"))
+    valores.append(valor)
+
+pares(valores)
+impares(valores)
+print(par)
+print(impar)
+
+print("PARES")
+for index in par:
+    print(index)
+print("IMPARES")
+for index in impar:
+    print(index)
+
+
+3)
+menu = 1
+areacirculo = 0
+raio = 0
+areacirculo = 0
+areaquadrado = 0
+arearetangulo = 0
+def circulo(raio):
+    area = 3,14 * (raio * raio)
+    return area
+
+def qadrado(lado):
+    return lado * lado
+
+def retangulo (base, altura):
+    area = base * altura
+    return area
+
+while menu == 1:
+
+    salvo = int(input("Qual área deseja calcular: [1] Círculo [2] Quadrado [3] Retângulo"))
+
+    if salvo == 1:
+        raio = float(input("Qual o raio da circunferência?"))
+        areacirculo = circulo(raio)
+        print(areacirculo, "cm")
+    elif salvo == 2:
+        lado = int(input("Qual o tamanho do lado do seu quadrado?"))
+        areaquadrado = qadrado(lado)
+        print(areaquadrado, "cm")
+    else:
+        base = float(input("Qual o tamanho da base do seu retangulo?"))
+        altura = float(input("Qual o tamanho da altura do seu retangulo?"))
+        arearetangulo = retangulo(base, altura)
+        print(arearetangulo, "cm")
+
+    desejo = int(input("Deseja calcular outra area? [1] SIM [2] NÃO"))
+    if desejo != 1:
+        print("Obrigado por nos escolher, volte sempre")
+        menu = 2
+    else:
+        menu = 1
